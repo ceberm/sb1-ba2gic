@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/BlogPost.astro';
+---
+
+<Layout title="Home">
+	<section class="hero">
+		<h1>Freelancer Nomad</h1>
+		<p>A Place to Grow</p>
+	</section>
+
+	<section class="latest-posts">
+		<h2>Latest Articles</h2>
+		<div class="posts-grid">
+			<BlogPost
+				title="Best Places to Live as a Freelancer in 2024"
+				description="Discover the top cities and countries that offer the perfect balance of cost of living, quality of life, and opportunities for freelancers."
+				publishDate="April 17, 2024"
+				slug="best-places-to-live-as-freelancer"
+			/>
+			<BlogPost
+				title="Essential Websites Every Freelancer Should Know"
+				description="Discover the most important online platforms and tools that will help you succeed in your freelance career."
+				publishDate="April 16, 2024"
+				slug="essential-websites-for-freelancers"
+			/>
+			<BlogPost
+				title="Getting Started as a Freelancer in 2024"
+				description="Essential tips and strategies for launching your freelance career in today's market."
+				publishDate="April 15, 2024"
+				slug="getting-started-freelancing"
+			/>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 4rem 2rem;
+		background: var(--champagne);
+		border-radius: 12px;
+		margin-bottom: 3rem;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+	}
+	.hero h1 {
+		font-size: 3.5rem;
+		color: var(--velvet);
+		margin: 0;
+		font-weight: 700;
+	}
+	.hero p {
+		font-size: 1.25rem;
+		color: var(--text-main);
+		margin: 1rem 0 0;
+		font-weight: 400;
+	}
+	.latest-posts h2 {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		color: var(--velvet);
+	}
+	.posts-grid {
+		display: grid;
+		gap: 2rem;
+	}
+</style>

@@ -1,0 +1,64 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	publishDate: string;
+	slug: string;
+}
+
+const { title, description, publishDate, slug } = Astro.props;
+---
+
+<article class="blog-post">
+	<a href={`/blog/${slug}`}>
+		<h2>{title}</h2>
+		<p class="date">{publishDate}</p>
+		<p class="description">{description}</p>
+		<span class="read-more">Read More →</span>
+	</a>
+</article>
+
+<style>
+	.blog-post {
+		margin-bottom: 2rem;
+		padding: 1.5rem;
+		border-radius: 8px;
+		background: var(--pearl);
+		box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+	.blog-post:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	}
+	.blog-post a {
+		text-decoration: none;
+		color: inherit;
+	}
+	h2 {
+		margin: 0;
+		color: var(--velvet);
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+	.date {
+		color: var(--text-light);
+		font-size: 0.9rem;
+		margin: 0.5rem 0;
+	}
+	.description {
+		color: var(--text-main);
+		margin: 0.5rem 0;
+		line-height: 1.6;
+	}
+	.read-more {
+		color: var(--velvet);
+		font-weight: 500;
+		display: inline-block;
+		margin-top: 0.5rem;
+		transition: color 0.2s ease;
+	}
+	.read-more:hover {
+		color: var(--onyx);
+	}
+</style>

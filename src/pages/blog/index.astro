@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+---
+
+<Layout title="Blog">
+	<h1>Latest Articles</h1>
+	<div class="blog-posts">
+		<BlogPost
+			title="Best Places to Live as a Freelancer in 2024"
+			description="Discover the top cities and countries that offer the perfect balance of cost of living, quality of life, and opportunities for freelancers."
+			publishDate="April 17, 2024"
+			slug="best-places-to-live-as-freelancer"
+		/>
+		<BlogPost
+			title="Essential Websites Every Freelancer Should Know"
+			description="Discover the most important online platforms and tools that will help you succeed in your freelance career."
+			publishDate="April 16, 2024"
+			slug="essential-websites-for-freelancers"
+		/>
+		<BlogPost
+			title="Getting Started as a Freelancer in 2024"
+			description="Essential tips and strategies for launching your freelance career in today's market."
+			publishDate="April 15, 2024"
+			slug="getting-started-freelancing"
+		/>
+		<BlogPost
+			title="Setting Your Freelance Rates"
+			description="Learn how to price your services effectively and communicate your value to clients."
+			publishDate="April 14, 2024"
+			slug="setting-freelance-rates"
+		/>
+		<BlogPost
+			title="Building Your Online Portfolio"
+			description="A comprehensive guide to creating a portfolio that attracts high-quality clients."
+			publishDate="April 13, 2024"
+			slug="building-portfolio"
+		/>
+	</div>
+</Layout>
+
+<style>
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
+	.blog-posts {
+		display: grid;
+		gap: 2rem;
+	}
+</style>

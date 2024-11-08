@@ -1,0 +1,120 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "A blog for freelancers sharing insights, tips, and experiences" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&family=Noto+Color+Emoji&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+		<title>{title} | Freelancer Nomad</title>
+	</head>
+	<body>
+		<header class="site-header">
+			<nav>
+				<div class="nav-content">
+					<a href="/" class="logo">Freelancer Nomad</a>
+					<div class="nav-links">
+						<a href="/">Home</a>
+						<a href="/blog">Blog</a>
+						<a href="/about">About</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer>
+			<p>&copy; {new Date().getFullYear()} Freelancer Nomad. All rights reserved.</p>
+		</footer>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--silk: #EEE5D9;
+		--champagne: #D2B68A;
+		--marble: #E8E4E0;
+		--onyx: #000000;
+		--velvet: #222D52;
+		--pearl: #FDFFFF;
+		
+		--primary: var(--velvet);
+		--primary-dark: var(--onyx);
+		--text-main: var(--onyx);
+		--text-light: #555555;
+		--background: var(--silk);
+		--background-alt: var(--pearl);
+	}
+	html {
+		font-family: 'Roboto', system-ui, sans-serif;
+		background: var(--background);
+		color: var(--text-main);
+	}
+	body {
+		margin: 0;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+	main {
+		flex: 1;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+	}
+	.site-header {
+		background: var(--champagne);
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+	}
+	nav {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 1rem;
+	}
+	.nav-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.nav-links {
+		display: flex;
+		gap: 1.5rem;
+	}
+	.nav-links a {
+		color: var(--velvet);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.2s ease;
+	}
+	.nav-links a:hover {
+		color: var(--onyx);
+	}
+	.logo {
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: var(--velvet);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+	.logo:hover {
+		color: var(--onyx);
+	}
+	footer {
+		text-align: center;
+		padding: 2rem;
+		background: var(--marble);
+		color: var(--text-main);
+	}
+</style>
